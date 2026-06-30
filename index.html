@@ -1,761 +1,2022 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Dewan Nahidul Alam</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link rel="icon" type="image/jpeg" href="files/logo.jpg">
-<style>
-:root {
-  --bg:        #F2EFE7;
-  --bg2:       #E8E4DA;
-  --bg3:       #DEDAD0;
-  --card:      #F8F6F0;
-  --ink:       #18160F;
-  --ink-mid:   #3D3A30;
-  --ink-muted: #7A7668;
-  --ink-faint: #B8B4A8;
-  --rule:      #D8D4C8;
-  --accent:    #C96A1E;
-  --accent2:   #1E5FA6;
-  --accent3:   #2A8C5A;
-  --accent-bg: #F5EBE0;
-  --grid:      rgba(180,170,150,0.15);
-  --sans:      'Space Grotesk', sans-serif;
-  --mono:      'Space Mono', monospace;
-  --display:   'Plus Jakarta Sans', sans-serif;
-  --r:         3px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  background:var(--bg);color:var(--ink);
-  font-family:var(--sans);font-size:16px;line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-  background-size:48px 48px;
-}
-::-webkit-scrollbar{width:4px;}
-::-webkit-scrollbar-track{background:var(--bg2);}
-::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dewan Nahidul Alam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/jpeg" href="files/logo.jpg">
+  <style>
+    :root {
+      --bg: #F2EFE7;
+      --bg2: #E8E4DA;
+      --bg3: #DEDAD0;
+      --card: #F8F6F0;
+      --ink: #18160F;
+      --ink-mid: #3D3A30;
+      --ink-muted: #7A7668;
+      --ink-faint: #B8B4A8;
+      --rule: #D8D4C8;
+      --accent: #C96A1E;
+      --accent2: #1E5FA6;
+      --accent3: #2A8C5A;
+      --accent-bg: #F5EBE0;
+      --grid: rgba(180, 170, 150, 0.15);
+      --sans: 'Space Grotesk', sans-serif;
+      --mono: 'Space Mono', monospace;
+      --display: 'Plus Jakarta Sans', sans-serif;
+      --r: 3px;
+    }
 
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  background:rgba(242,239,231,0.94);backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--rule);
-  height:58px;display:flex;align-items:center;justify-content:space-between;
-  padding:0 48px;
-}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.dna-mark{
-  width:38px;height:38px;background:var(--ink);border-radius:var(--r);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;overflow:hidden;
-}
-.dna-mark::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent) 0%,transparent 60%);opacity:0.6;}
-.dna-text{font-family:var(--mono);font-size:13px;font-weight:700;color:#fff;letter-spacing:0.05em;position:relative;z-index:1;}
-.nav-brand-name{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:0.02em;color:var(--ink);}
-.nav-brand-name span{color:var(--accent);}
-.nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
-.nav-links a{
-  font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--ink-muted);text-decoration:none;transition:color 0.2s;position:relative;
-}
-.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.25s;}
-.nav-links a:hover{color:var(--accent);}
-.nav-links a:hover::after{transform:scaleX(1);}
-.nav-cv{
-  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
-  /* background:var(--accent);color:#fff;padding:9px 18px;border-radius:var(--r);text-decoration:none; */
-  transition:all 0.2s;border:1px solid var(--accent);
-}
-.nav-cv:hover{background:var(--ink);border-color:var(--ink);}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* LAYOUT */
-.wrap{max-width:1020px;margin:0 auto;padding:0 48px;}
-section{padding:108px 0;border-bottom:1px solid var(--rule);}
-section:last-of-type{border-bottom:none;}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* HERO */
-#hero{padding-top:148px;padding-bottom:108px;position:relative;}
-.hero-top{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:start;margin-bottom:52px;}
-.avatar-wrap{width:128px;flex-shrink:0;opacity:0;animation:fadeUp 0.7s 0.3s forwards;}
-.avatar-ring{
-  width:128px;height:128px;border-radius:var(--r);border:2px solid var(--accent);
-  background:var(--bg2);display:flex;align-items:center;justify-content:center;
-  overflow:hidden;position:relative;
-}
-.avatar-ring::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent-bg) 0%,var(--bg2) 100%);}
-.avatar-initials{font-family:var(--display);font-size:34px;font-weight:800;color:var(--ink);position:relative;z-index:1;letter-spacing:-0.02em;}
-.avatar-initials span{color:var(--accent);}
-.avatar-badge{
-  margin-top:8px;background:var(--ink);color:#fff;
-  font-family:var(--mono);font-size:9px;font-weight:700;
-  letter-spacing:0.1em;text-transform:uppercase;padding:6px 10px;border-radius:2px;text-align:center;
-}
-.hero-tag{
-  font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;
-  color:var(--accent);display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;
-  opacity:0;animation:fadeUp 0.6s 0.1s forwards;
-}
-.hero-tag-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.4);}}
-h1{
-  font-family:var(--display);font-size:clamp(46px,6.5vw,80px);
-  font-weight:800;line-height:1.0;letter-spacing:-0.03em;color:var(--ink);margin-bottom:28px;
-  opacity:0;animation:fadeUp 0.7s 0.2s forwards;
-}
-h1 .accent{color:var(--accent);}
-h1 .outline{-webkit-text-stroke:2px var(--ink);color:transparent;}
-.hero-sub{
-  font-size:17px;font-weight:300;color:var(--ink-mid);max-width:580px;line-height:1.85;margin-bottom:40px;
-  opacity:0;animation:fadeUp 0.7s 0.35s forwards;
-}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp 0.7s 0.45s forwards;}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  padding:13px 24px;border-radius:var(--r);text-decoration:none;transition:all 0.2s;
-}
-.btn-solid{background:var(--ink);color:var(--bg);border:2px solid var(--ink);}
-.btn-solid:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px);}
-.btn-outline{background:transparent;color:var(--ink);border:2px solid var(--rule);}
-.btn-outline:hover{border-color:var(--ink);transform:translateY(-2px);}
-.hero-stats{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
-  opacity:0;animation:fadeUp 0.7s 0.55s forwards;
-}
-.stat-box{
-  background:var(--card);padding:24px 20px;border:1px solid var(--rule);position:relative;overflow:hidden;
-}
-.stat-box::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;
-}
-.stat-box:hover::before{transform:scaleX(1);}
-.stat-n{font-family:var(--display);font-size:44px;font-weight:800;color:var(--ink);line-height:1;margin-bottom:8px;letter-spacing:-0.02em;}
-.stat-n .suf{color:var(--accent);}
-.stat-l{font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-muted);line-height:1.5;}
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
 
-/* SECTION HEAD */
-.sh{margin-bottom:64px;}
-.sh-eye{
-  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:16px;
-}
-.sh-eye::before{content:'//';color:var(--ink-faint);font-size:10px;}
-h2{font-family:var(--display);font-size:clamp(36px,4.5vw,56px);font-weight:800;line-height:1.0;color:var(--ink);letter-spacing:-0.02em;}
-h2 em{font-style:normal;color:var(--accent);}
-.sh-desc{margin-top:16px;font-size:15px;font-weight:300;color:var(--ink-muted);max-width:480px;line-height:1.8;}
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
 
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:3fr 2fr;gap:72px;align-items:start;}
-.about-body p{font-size:16px;font-weight:300;color:var(--ink-mid);line-height:1.9;margin-bottom:20px;}
-.about-body p strong{color:var(--ink);font-weight:600;}
-.aside-card{background:var(--card);border:1px solid var(--rule);padding:24px 22px;margin-bottom:14px;position:relative;}
-.aside-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);}
-.aside-label{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
-.aside-val{font-size:14px;font-weight:400;color:var(--ink);line-height:1.75;}
-.aside-val a{color:var(--accent2);text-decoration:none;}
-.aside-val a:hover{text-decoration:underline;}
-.cert-pill{
-  display:inline-flex;align-items:center;gap:6px;
-  font-family:var(--mono);font-size:11px;color:var(--ink-mid);
-  background:var(--bg2);border:1px solid var(--rule);
-  padding:5px 10px;border-radius:2px;margin:4px 4px 0 0;
-}
-.cert-dot{width:5px;height:5px;border-radius:50%;background:var(--accent3);flex-shrink:0;}
+    ::-webkit-scrollbar-track {
+      background: var(--bg2);
+    }
 
-/* EXPERIENCE */
-.exp-item{
-  display:grid;grid-template-columns:220px 1fr;gap:44px;padding:44px 0;border-top:1px solid var(--rule);
-  opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;
-}
-.exp-item.vis{opacity:1;transform:translateY(0);}
-.exp-period{font-family:var(--mono);font-size:11px;color:var(--ink-muted);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
-.exp-active{width:6px;height:6px;border-radius:50%;background:var(--accent3);animation:pulse 2s infinite;flex-shrink:0;}
-.exp-co{font-family:var(--display);font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;}
-.exp-loc{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.06em;}
-.exp-role{font-family:var(--display);font-size:26px;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.15;letter-spacing:-0.01em;}
-.exp-bullets{margin-bottom:20px;padding-left:0;list-style:none;}
-.exp-bullets li{
-  font-size:15px;font-weight:300;color:var(--ink-mid);line-height:1.8;
-  padding:7px 0 7px 22px;position:relative;border-bottom:1px solid var(--rule);
-}
-.exp-bullets li:last-child{border-bottom:none;}
-.exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--accent);font-family:var(--mono);font-size:12px;top:9px;}
-.tag-row{display:flex;flex-wrap:wrap;gap:6px;}
-.tag{font-family:var(--mono);font-size:10px;color:var(--ink-mid);background:var(--bg2);padding:5px 10px;border-radius:2px;border:1px solid var(--rule);}
-.tag.hi{background:var(--accent-bg);color:var(--accent);border-color:rgba(201,106,30,0.2);}
-.tag.hi2{background:#EBF2FC;color:var(--accent2);border-color:rgba(30,95,166,0.2);}
-.exp-desc{font-size:14px;font-weight:300;color:var(--ink-muted);line-height:1.8;margin-bottom:20px;}
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 2px;
+    }
 
-/* PROJECTS */
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;align-items:start;}
-.proj-card{
-  background:var(--card);border:1px solid var(--rule);
-  opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;
-  position:relative;
-}
-.proj-card.vis{opacity:1;transform:translateY(0);}
-.proj-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.09);}
-.proj-accent-bar{height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 0.5s ease;}
-.proj-card:hover .proj-accent-bar{width:100%;}
-.proj-top{padding:36px 32px 28px;}
-.proj-num{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.1em;margin-bottom:14px;}
-.proj-domain{
-  display:inline-flex;align-items:center;gap:6px;
-  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--accent);background:var(--accent-bg);padding:5px 10px;border-radius:2px;
-  margin-bottom:16px;border:1px solid rgba(201,106,30,0.2);
-}
-.proj-title{font-family:var(--display);font-size:26px;font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:14px;letter-spacing:-0.01em;}
-.proj-brief{font-size:14px;font-weight:300;color:var(--ink-muted);line-height:1.8;margin-bottom:20px;}
-.proj-tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;}
-.proj-links{display:flex;gap:10px;flex-wrap:wrap;}
-.proj-link{
-  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:6px;
-  padding:8px 14px;border:1px solid var(--rule);border-radius:2px;transition:all 0.2s;
-}
-.proj-link:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);}
-.proj-link svg{width:12px;height:12px;}
-.toggle-btn{
-  display:flex;align-items:center;gap:10px;width:100%;
-  padding:16px 32px;background:var(--bg2);border:none;border-top:1px solid var(--rule);
-  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--ink-muted);cursor:pointer;transition:all 0.2s;text-align:left;
-}
-.toggle-btn:hover{background:var(--accent);color:#fff;}
-.toggle-icon{
-  width:18px;height:18px;border:2px solid currentColor;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;font-size:14px;
-  transition:transform 0.35s;flex-shrink:0;line-height:1;
-}
-.proj-card.open .toggle-icon{transform:rotate(45deg);}
-.proj-detail{max-height:0;overflow:hidden;transition:max-height 0.7s cubic-bezier(0.16,1,0.3,1),padding 0.3s ease;background:var(--bg2);padding:0 32px;}
-.proj-detail.open{max-height:2000px;padding:28px 32px;}
-.detail-head{
-  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:8px;
-}
-.detail-head::before{content:'//';color:var(--ink-faint);}
-.detail-meta{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px;}
-.dm-label{font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:4px;}
-.dm-val{font-size:14px;font-weight:500;color:var(--ink);}
-.detail-list{margin-bottom:20px;padding-left:0;list-style:none;}
-.detail-list li{font-size:14px;font-weight:300;color:var(--ink-mid);line-height:1.8;padding:6px 0 6px 20px;position:relative;border-bottom:1px solid var(--rule);}
-.detail-list li:last-child{border-bottom:none;}
-.detail-list li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:11px;top:8px;}
-.achievement-box{background:var(--card);border-left:3px solid var(--accent);padding:16px 20px;font-size:14px;font-weight:400;color:var(--ink-mid);line-height:1.75;}
-.achievement-box strong{color:var(--ink);}
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: rgba(242, 239, 231, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--rule);
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+    }
 
-/* SKILLS */
-.skills-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
-.skill-group{
-  background:var(--card);padding:32px 28px;border:1px solid var(--rule);
-  opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;
-}
-.skill-group.vis{opacity:1;transform:translateY(0);}
-.sg-label{
-  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);
-  display:flex;align-items:center;gap:6px;
-}
-.sg-label::before{content:'//';color:var(--ink-faint);}
-.sk-item{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--rule);gap:12px;}
-.sk-item:last-child{border-bottom:none;}
-.sk-name{font-size:14px;font-weight:500;color:var(--ink);flex:1;}
-.sk-bar-wrap{width:72px;height:4px;background:var(--bg3);border-radius:2px;overflow:hidden;flex-shrink:0;}
-.sk-bar{
-  height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;
-  transform:scaleX(0);transform-origin:left;
-  transition:transform 0.8s cubic-bezier(0.16,1,0.3,1);transition-delay:var(--d,0s);
-}
-.sk-bar.vis{transform:scaleX(1);}
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
 
-/* EDUCATION */
-.edu-item{
-  display:grid;grid-template-columns:220px 1fr;gap:44px;padding:40px 0;border-top:1px solid var(--rule);
-  opacity:0;transform:translateY(14px);transition:opacity 0.5s ease,transform 0.5s ease;
-}
-.edu-item.vis{opacity:1;transform:translateY(0);}
-.edu-year{font-family:var(--mono);font-size:11px;color:var(--ink-muted);margin-bottom:8px;}
-.edu-inst{font-family:var(--display);font-size:15px;font-weight:700;color:var(--ink);}
-.edu-degree{font-family:var(--display);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.15;letter-spacing:-0.01em;}
-.edu-note{font-size:14px;font-weight:300;color:var(--ink-muted);line-height:1.8;}
+    .dna-mark {
+      width: 38px;
+      height: 38px;
+      background: var(--ink);
+      border-radius: var(--r);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* PUBLICATIONS */
-.pub-card{
-  background:var(--card);border:1px solid var(--rule);padding:40px;
-  display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:start;
-  position:relative;overflow:hidden;
-  opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;
-}
-.pub-card.vis{opacity:1;transform:translateY(0);}
-.pub-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent2);}
-.pub-badge{
-  background:var(--accent2);color:#fff;font-family:var(--mono);font-size:10px;font-weight:700;
-  letter-spacing:0.1em;text-transform:uppercase;padding:10px 14px;border-radius:2px;
-  writing-mode:vertical-rl;display:flex;align-items:center;justify-content:center;
-}
-.pub-journal{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:12px;}
-.pub-title{font-family:var(--display);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:12px;line-height:1.3;letter-spacing:-0.01em;}
-.pub-meta{font-family:var(--mono);font-size:11px;color:var(--ink-muted);margin-bottom:16px;}
-.pub-link{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--accent2);text-decoration:none;padding:9px 16px;border:1px solid var(--accent2);border-radius:2px;transition:all 0.2s;
-}
-.pub-link:hover{background:var(--accent2);color:#fff;}
+    .dna-mark::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent) 0%, transparent 60%);
+      opacity: 0.6;
+    }
 
-/* CONTACT */
-#contact{text-align:center;}
-.contact-headline{
-  font-family:var(--display);font-size:clamp(32px,4.5vw,54px);font-weight:800;
-  color:var(--ink);max-width:560px;margin:0 auto 16px;line-height:1.05;letter-spacing:-0.02em;
-}
-.contact-headline em{color:var(--accent);font-style:normal;}
-.contact-sub{font-size:16px;font-weight:300;color:var(--ink-muted);margin-bottom:48px;}
-.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
-.c-link{
-  display:inline-flex;align-items:center;gap:9px;
-  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  padding:14px 24px;border-radius:var(--r);text-decoration:none;transition:all 0.2s;
-}
-.c-dark{background:var(--ink);color:var(--bg);border:2px solid var(--ink);}
-.c-dark:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px);}
-.c-outline{background:transparent;color:var(--ink);border:2px solid var(--rule);}
-.c-outline:hover{border-color:var(--ink);transform:translateY(-2px);}
-.c-link svg{width:16px;height:16px;flex-shrink:0;}
+    .dna-text {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.05em;
+      position: relative;
+      z-index: 1;
+    }
 
-/* FOOTER */
-footer{
-  padding:32px 48px;border-top:1px solid var(--rule);
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
-  background:var(--bg2);
-}
-.footer-brand{display:flex;align-items:center;gap:10px;}
-.footer-name{font-family:var(--display);font-size:14px;font-weight:700;color:var(--ink);}
-.footer-note{font-family:var(--mono);font-size:10px;color:var(--ink-muted);letter-spacing:0.08em;}
+    .nav-brand-name {
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+    }
 
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+    .nav-brand-name span {
+      color: var(--accent);
+    }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-  nav{padding:0 20px;}
-  .nav-links{display:none;}
-  .wrap{padding:0 20px;}
-  footer{padding:24px 20px;}
-  .exp-item,.edu-item,.about-grid{grid-template-columns:1fr;gap:16px;}
-  .proj-grid,.skills-wrap{grid-template-columns:1fr;}
-  .hero-top{grid-template-columns:1fr;}
-  .hero-stats{grid-template-columns:1fr 1fr;}
-  .pub-card{grid-template-columns:1fr;}
-  .pub-badge{writing-mode:initial;}
-  .detail-meta{grid-template-columns:1fr;}
-}
-</style>
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cv {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      /* background:var(--accent);color:#fff;padding:9px 18px;border-radius:var(--r);text-decoration:none; */
+      transition: all 0.2s;
+      border: 1px solid var(--accent);
+    }
+
+    .nav-cv:hover {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    /* LAYOUT */
+    .wrap {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    section {
+      padding: 108px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    /* HERO */
+    #hero {
+      padding-top: 148px;
+      padding-bottom: 108px;
+      position: relative;
+    }
+
+    .hero-top {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 52px;
+    }
+
+    .avatar-wrap {
+      width: 128px;
+      flex-shrink: 0;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.3s forwards;
+    }
+
+    .avatar-ring {
+      width: 128px;
+      height: 128px;
+      border-radius: var(--r);
+      border: 2px solid var(--accent);
+      background: var(--bg2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .avatar-ring::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent-bg) 0%, var(--bg2) 100%);
+    }
+
+    .avatar-initials {
+      font-family: var(--display);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--ink);
+      position: relative;
+      z-index: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .avatar-initials span {
+      color: var(--accent);
+    }
+
+    .avatar-badge {
+      margin-top: 8px;
+      background: var(--ink);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 2px;
+      text-align: center;
+    }
+
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.1s forwards;
+    }
+
+    .hero-tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(1.4);
+      }
+    }
+
+    h1 {
+      font-family: var(--display);
+      font-size: clamp(46px, 6.5vw, 80px);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s forwards;
+    }
+
+    h1 .accent {
+      color: var(--accent);
+    }
+
+    h1 .outline {
+      -webkit-text-stroke: 2px var(--ink);
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      max-width: 580px;
+      line-height: 1.85;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.35s forwards;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.45s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 13px 24px;
+      border-radius: var(--r);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-solid {
+      background: var(--ink);
+      color: var(--bg);
+      border: 2px solid var(--ink);
+    }
+
+    .btn-solid:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 2px solid var(--rule);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.55s forwards;
+    }
+
+    .stat-box {
+      background: var(--card);
+      padding: 24px 20px;
+      border: 1px solid var(--rule);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .stat-box:hover::before {
+      transform: scaleX(1);
+    }
+
+    .stat-n {
+      font-family: var(--display);
+      font-size: 44px;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-n .suf {
+      color: var(--accent);
+    }
+
+    .stat-l {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+
+    /* SECTION HEAD */
+    .sh {
+      margin-bottom: 64px;
+    }
+
+    .sh-eye {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .sh-eye::before {
+      content: '//';
+      color: var(--ink-faint);
+      font-size: 10px;
+    }
+
+    h2 {
+      font-family: var(--display);
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: 800;
+      line-height: 1.0;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    h2 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .sh-desc {
+      margin-top: 16px;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--ink-muted);
+      max-width: 480px;
+      line-height: 1.8;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .about-body p {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .about-body p strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .aside-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      padding: 24px 22px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .aside-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--accent);
+    }
+
+    .aside-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .aside-val {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.75;
+    }
+
+    .aside-val a {
+      color: var(--accent2);
+      text-decoration: none;
+    }
+
+    .aside-val a:hover {
+      text-decoration: underline;
+    }
+
+    .cert-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-mid);
+      background: var(--bg2);
+      border: 1px solid var(--rule);
+      padding: 5px 10px;
+      border-radius: 2px;
+      margin: 4px 4px 0 0;
+    }
+
+    .cert-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent3);
+      flex-shrink: 0;
+    }
+
+    /* EXPERIENCE */
+    .exp-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 44px;
+      padding: 44px 0;
+      border-top: 1px solid var(--rule);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .exp-item.vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .exp-period {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-muted);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-active {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent3);
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    .exp-co {
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .exp-loc {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink-faint);
+      letter-spacing: 0.06em;
+    }
+
+    .exp-role {
+      font-family: var(--display);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 16px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .exp-bullets {
+      margin-bottom: 20px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .exp-bullets li {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.8;
+      padding: 7px 0 7px 22px;
+      position: relative;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .exp-bullets li:last-child {
+      border-bottom: none;
+    }
+
+    .exp-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 12px;
+      top: 9px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink-mid);
+      background: var(--bg2);
+      padding: 5px 10px;
+      border-radius: 2px;
+      border: 1px solid var(--rule);
+    }
+
+    .tag.hi {
+      background: var(--accent-bg);
+      color: var(--accent);
+      border-color: rgba(201, 106, 30, 0.2);
+    }
+
+    .tag.hi2 {
+      background: #EBF2FC;
+      color: var(--accent2);
+      border-color: rgba(30, 95, 166, 0.2);
+    }
+
+    .exp-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--ink-muted);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    /* PROJECTS */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      align-items: start;
+    }
+
+    .proj-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      position: relative;
+    }
+
+    .proj-card.vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .proj-card:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09);
+    }
+
+    .proj-accent-bar {
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width 0.5s ease;
+    }
+
+    .proj-card:hover .proj-accent-bar {
+      width: 100%;
+    }
+
+    .proj-top {
+      padding: 36px 32px 28px;
+    }
+
+    .proj-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink-faint);
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+
+    .proj-domain {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-bg);
+      padding: 5px 10px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(201, 106, 30, 0.2);
+    }
+
+    .proj-title {
+      font-family: var(--display);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .proj-brief {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--ink-muted);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .proj-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .proj-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .proj-link {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .proj-link:hover {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink);
+    }
+
+    .proj-link svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .toggle-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 32px;
+      background: var(--bg2);
+      border: none;
+      border-top: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: left;
+    }
+
+    .toggle-btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .toggle-icon {
+      width: 18px;
+      height: 18px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: transform 0.35s;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .proj-card.open .toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    .proj-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.7s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+      background: var(--bg2);
+      padding: 0 32px;
+    }
+
+    .proj-detail.open {
+      max-height: 2000px;
+      padding: 28px 32px;
+    }
+
+    .detail-head {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .detail-head::before {
+      content: '//';
+      color: var(--ink-faint);
+    }
+
+    .detail-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .dm-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 4px;
+    }
+
+    .dm-val {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .detail-list {
+      margin-bottom: 20px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .detail-list li {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.8;
+      padding: 6px 0 6px 20px;
+      position: relative;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .detail-list li:last-child {
+      border-bottom: none;
+    }
+
+    .detail-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 11px;
+      top: 8px;
+    }
+
+    .achievement-box {
+      background: var(--card);
+      border-left: 3px solid var(--accent);
+      padding: 16px 20px;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ink-mid);
+      line-height: 1.75;
+    }
+
+    .achievement-box strong {
+      color: var(--ink);
+    }
+
+    /* SKILLS */
+    .skills-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .skill-group {
+      background: var(--card);
+      padding: 32px 28px;
+      border: 1px solid var(--rule);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .skill-group.vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sg-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sg-label::before {
+      content: '//';
+      color: var(--ink-faint);
+    }
+
+    .sk-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--rule);
+      gap: 12px;
+    }
+
+    .sk-item:last-child {
+      border-bottom: none;
+    }
+
+    .sk-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      flex: 1;
+    }
+
+    .sk-bar-wrap {
+      width: 72px;
+      height: 4px;
+      background: var(--bg3);
+      border-radius: 2px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .sk-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transition-delay: var(--d, 0s);
+    }
+
+    .sk-bar.vis {
+      transform: scaleX(1);
+    }
+
+    /* EDUCATION */
+    .edu-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 44px;
+      padding: 40px 0;
+      border-top: 1px solid var(--rule);
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .edu-item.vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .edu-year {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-muted);
+      margin-bottom: 8px;
+    }
+
+    .edu-inst {
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .edu-degree {
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .edu-note {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--ink-muted);
+      line-height: 1.8;
+    }
+
+    /* PUBLICATIONS */
+    .pub-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 36px;
+      align-items: start;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .pub-card.vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .pub-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--accent2);
+    }
+
+    .pub-badge {
+      background: var(--accent2);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border-radius: 2px;
+      writing-mode: vertical-rl;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pub-journal {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 12px;
+    }
+
+    .pub-title {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .pub-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-muted);
+      margin-bottom: 16px;
+    }
+
+    .pub-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      text-decoration: none;
+      padding: 9px 16px;
+      border: 1px solid var(--accent2);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .pub-link:hover {
+      background: var(--accent2);
+      color: #fff;
+    }
+
+    /* CONTACT */
+    #contact {
+      text-align: center;
+    }
+
+    .contact-headline {
+      font-family: var(--display);
+      font-size: clamp(32px, 4.5vw, 54px);
+      font-weight: 800;
+      color: var(--ink);
+      max-width: 560px;
+      margin: 0 auto 16px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-headline em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .contact-sub {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--ink-muted);
+      margin-bottom: 48px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .c-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 24px;
+      border-radius: var(--r);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .c-dark {
+      background: var(--ink);
+      color: var(--bg);
+      border: 2px solid var(--ink);
+    }
+
+    .c-dark:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .c-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 2px solid var(--rule);
+    }
+
+    .c-outline:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .c-link svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 48px;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: var(--bg2);
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-name {
+      font-family: var(--display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .footer-note {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink-muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px) {
+      nav {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .wrap {
+        padding: 0 20px;
+      }
+
+      footer {
+        padding: 24px 20px;
+      }
+
+      .exp-item,
+      .edu-item,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .proj-grid,
+      .skills-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-top {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pub-card {
+        grid-template-columns: 1fr;
+      }
+
+      .pub-badge {
+        writing-mode: initial;
+      }
+
+      .detail-meta {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav>
-  <a href="#hero" class="nav-logo">
-    <span class="nav-brand-name">Dewan<span>.</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a class="nav-cv"> </a>
-</nav>
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <span class="nav-brand-name">Dewan<span>.</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cv"> </a>
+  </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="wrap">
-    <div class="hero-top">
-      <div class="hero-left">
-        <div class="hero-tag"><span class="hero-tag-dot"></span>Data &amp; Business Analyst · Auckland, NZ</div>
-        <h1>Dewan<br><span class="accent">Nahidul</span><br><span class="outline">Alam</span></h1>
-        <p class="hero-sub">5 years of industry experience in telecom and e-commerce analytics, and bridging raw data and strategic business decisions. Currently completing a Master of Business Analytics at the University of Auckland.</p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn btn-solid">View Projects →</a>
-          <a href="#experience" class="btn btn-outline">My Experience</a>
-          <a href="#contact" class="btn btn-outline">Get in Touch</a>
-        </div>
-      </div>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-box"><div class="stat-n"><span class="counter" data-target="5">0</span><span class="suf">+</span></div><div class="stat-l">Years Industry Experience</div></div>
-      <div class="stat-box"><div class="stat-n"><span class="counter" data-target="12">0</span><span class="suf">M+</span></div><div class="stat-l">Daily Active Users Managed</div></div>
-      <div class="stat-box"><div class="stat-n"><span class="counter" data-target="90">0</span><span class="suf">%</span></div><div class="stat-l">Churn Model Accuracy</div></div>
-      <div class="stat-box"><div class="stat-n"><span class="counter" data-target="2">0</span></div><div class="stat-l">Industries — Telecom &amp; E-Commerce</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <div class="sh"><div class="sh-eye">About</div><h2>The analyst behind<br>the <em>numbers</em></h2></div>
-    <div class="about-grid">
-      <div class="about-body">
-        <p>I'm <strong>Dewan Nahidul Alam</strong>, a data and business analyst currently pursuing a Master of Business Analytics at the University of Auckland. My background spans five years across two fast-moving industries, telecom and e-commerce, where I've worked at the intersection of data, product strategy, and customer behaviour.</p>
-        <p>At <strong>Robi Axiata</strong>, one of Bangladesh's largest telecom operators, I progressed from managing a prepaid product portfolio responsible for BDT 25 million in daily revenue, to building dashboards and analytical models that shaped strategic decisions at the campaign and business level.</p>
-        <p>At <strong>Daraz Bangladesh</strong>, South Asia's leading e-commerce platform, I analyzed traffic and sales data for a platform with 9 million daily active users, ensuring product placement, campaign execution, and content quality drove measurable commercial outcomes.</p>
-        <p>I work with <strong>SQL, Python, R, Power BI, Tableau, and Excel</strong>. My goal is always the same: make data comprehensible and useful for people who need to make decisions.</p>
-      </div>
-      <div>
-        <div class="aside-card"><div class="aside-label">Currently</div><div class="aside-val">Master of Business Analytics<br>University of Auckland<br>Sep 2025 – Present</div></div>
-        <div class="aside-card"><div class="aside-label">Location</div><div class="aside-val">Auckland, New Zealand</div></div>
-        <div class="aside-card"><div class="aside-label">Languages</div><div class="aside-val">English — Bilingual<br>Bengali — Bilingual</div></div>
-        <div class="aside-card">
-          <div class="aside-label">Certifications</div>
-          <div><span class="cert-pill"><span class="cert-dot"></span>SQL · DataCamp</span><span class="cert-pill"><span class="cert-dot"></span>Python · DataCamp</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="wrap">
-    <div class="sh">
-      <div class="sh-eye">Experience</div>
-      <h2>Where I've worked<br>&amp; what I <em>built</em></h2>
-      <p class="sh-desc">5 years across telecom and e-commerce, growing from roles in campaign operations to analytics and performance.</p>
-    </div>
-    <div class="exp-item">
-      <div>
-        <div class="exp-period"><span class="exp-active"></span>Jul 2023 – Sep 2025</div>
-        <div class="exp-co">Robi Axiata Limited</div>
-        <div class="exp-loc">Dhaka, Bangladesh</div>
-      </div>
-      <div>
-        <div class="exp-role">Assistant Manager — Analysis &amp; Performance</div>
-          <p class="exp-desc">Analytics partner to senior leadership — interpreted complex subscriber and revenue data into strategic narratives and actionable recommendations for C-suite and commercial teams, modelled micro-segment customer behaviour, and delivered predictive models and automated reporting to help in regular business status visibility and decision-making at the leadership level.</p>
-        <div class="tag-row"><span class="tag hi">SQL</span><span class="tag hi">Power BI</span><span class="tag hi">Excel</span><span class="tag">Campaign Analytics</span><span class="tag">Data Warehouse</span><span class="tag">Predictive Modelling</span><span class="tag">Telecom</span></div>
-      </div>
-    </div>
-    <div class="exp-item">
-      <div>
-        <div class="exp-period">Feb 2022 – Jul 2023</div>
-        <div class="exp-co">Robi Axiata Limited</div>
-        <div class="exp-loc">Dhaka, Bangladesh</div>
-      </div>
-      <div>
-        <div class="exp-role">Specialist — Product &amp; Pricing</div>
-          <p class="exp-desc">Owned the CLM campaign and prepaid product portfolio responsible for BDT 25M daily revenue and 12M+ users, leading subscriber segmentation and end-to-end product lifecycle management.</p>
-        <div class="tag-row"><span class="tag hi">Product Management</span><span class="tag hi">CLM</span><span class="tag">Pricing Strategy</span><span class="tag">Segmentation</span><span class="tag">Telecom</span></div>
-      </div>
-    </div>
-    <div class="exp-item">
-      <div>
-        <div class="exp-period">Nov 2020 – Feb 2022</div>
-        <div class="exp-co">Daraz Bangladesh</div>
-        <div class="exp-loc">Dhaka, Bangladesh</div>
-      </div>
-      <div>
-        <div class="exp-role">Campaign Operations Executive</div>
-          <p class="exp-desc">Monitored sales and traffic analytics across a 9M DAU e-commerce platform, maintaining 3%+ CTR, and assessing campaign and brand performance while coordinating with CRM, design, and marketing teams to optimize product placement and targeting.</p>
-        <div class="tag-row"><span class="tag hi">Campaign Analytics</span><span class="tag hi">Excel</span><span class="tag">CRM</span><span class="tag">Traffic Analysis</span><span class="tag">E-Commerce</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="wrap">
-    <div class="sh">
-      <div class="sh-eye">Projects</div>
-      <h2>Case studies &amp;<br><em>analytical work</em></h2>
-      <p class="sh-desc">Projects applying real business thinking to structured datasets. Expand each card for the full case study.<br>To view all projects, go to <a href="projects.html"><strong>All Projects</strong></a>.<br>Or visit <a href="https://github.com/Dewan-Nahidul-Alam" target="_blank">my GitHub</a></p>
-    </div>
-    <div class="proj-grid">
-      <div class="proj-card" id="p1">
-        <div class="proj-accent-bar"></div>
-        <div class="proj-top">
-          <div class="proj-domain">Automobile · Predictive Analytics</div>
-          <div class="proj-title">Predictive Customer Churn Analysis</div>
-          <p class="proj-brief">Built a churn prediction model for KoruCharge EV customers, identifying the top 5 churn drivers with 90.5% correctness and 89.2% accuracy to support targeted retention strategies.</p>
-          <div class="proj-tools"><span class="tag hi">R</span><span class="tag hi">Excel</span><span class="tag">Logistic Regression</span><span class="tag">XGBoost</span><span class="tag">LightGBM</span><span class="tag">Random Forest</span><span class="tag">KNN</span></div>
-          <div class="proj-links">
-            <a href="https://github.com/Dewan-Nahidul-Alam/korucharge-predictive-churn" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>GitHub</a>
-            <a href="files/report_korucharge.pdf" target="_blank" class="proj-link"")"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>Report</a>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <div class="hero-left">
+          <div class="hero-tag"><span class="hero-tag-dot"></span>Data &amp; Business Analyst · Auckland, NZ</div>
+          <h1>Dewan<br><span class="accent">Nahidul</span><br><span class="outline">Alam</span></h1>
+          <p class="hero-sub">5 years of industry experience in telecom and e-commerce analytics, and bridging raw data
+            and strategic business decisions. Currently completing a Master of Business Analytics at the University of
+            Auckland.</p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn btn-solid">View Projects →</a>
+            <a href="#experience" class="btn btn-outline">My Experience</a>
+            <a href="#contact" class="btn btn-outline">Get in Touch</a>
           </div>
         </div>
-        <button class="toggle-btn" onclick="toggleProject('p1')"><span class="toggle-icon">+</span><span class="toggle-text">View Full Case Study</span></button>
-        <div class="proj-detail" id="p1-detail">
-          <div class="detail-head">Case Study Breakdown</div>
-          <div class="detail-meta">
-            <div><div class="dm-label">Period</div><div class="dm-val">Feb 2026 – Mar 2026</div></div>
-            <div><div class="dm-label">Role</div><div class="dm-val">Business Analyst / Consultant</div></div>
-            <div><div class="dm-label">Client</div><div class="dm-val">KoruCharge (Fictional)</div></div>
-            <div><div class="dm-label">Domain</div><div class="dm-val">Automobile / EV Charging</div></div>
-          </div>
-          <div class="dm-label" style="margin-bottom:10px;">Approach</div>
-          <ul class="detail-list">
-            <li>Data preprocessing — ensured numerical/variable consistency and handled missing values</li>
-            <li>Exploratory analysis summarising churn distributions across key categorical and numerical variables</li>
-            <li>70/30 train-test split using stratified sampling + 5-fold cross validation on training set</li>
-            <li>Evaluated 6 algorithms: Logistic Regression, LightGBM, XGBoost, Random Forest, Naïve Bayes, KNN</li>
-            <li>Final model fitted to full training data and evaluated on unseen test set</li>
-          </ul>
-          <div class="dm-label" style="margin-bottom:10px;">Key Achievement</div>
-          <div class="achievement-box">Identified the top 5 key drivers of churn with <strong>90.5% correctness and 89.2% accuracy</strong>, translating findings into actionable retention recommendations for KoruCharge's management team.</div>
-        </div>
       </div>
-
-      <div class="proj-card" id="p2">
-        <div class="proj-accent-bar"></div>
-        <div class="proj-top">
-          <div class="proj-domain">Retail · Data Warehouse &amp; BI</div>
-          <div class="proj-title">Data-Driven Product Portfolio Optimisation</div>
-          <p class="proj-brief">Designed a full data warehouse for Adventure Works Cycles using Azure Data Factory and Star Schema, enabling SQL-driven cross-dimensional analysis and a strategic product roadmap.</p>
-          <div class="proj-tools"><span class="tag hi">SQL</span><span class="tag hi">Power BI</span><span class="tag hi2">Azure Data Factory</span><span class="tag">Excel</span><span class="tag">Star Schema</span><span class="tag">ETL</span></div>
-          <div class="proj-links">
-            <a href="https://github.com/Dewan-Nahidul-Alam/adventureworks-product-optimization" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>GitHub</a>
-            <a href="files/report_adventureworks.pdf" target="_blank" class="proj-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>Report</a>
-          </div>
+      <div class="hero-stats">
+        <div class="stat-box">
+          <div class="stat-n"><span class="counter" data-target="5">0</span><span class="suf">+</span></div>
+          <div class="stat-l">Years Industry Experience</div>
         </div>
-        <button class="toggle-btn" onclick="toggleProject('p2')"><span class="toggle-icon">+</span><span class="toggle-text">View Full Case Study</span></button>
-        <div class="proj-detail" id="p2-detail">
-          <div class="detail-head">Case Study Breakdown</div>
-          <div class="detail-meta">
-            <div><div class="dm-label">Period</div><div class="dm-val">Oct 2025 – Nov 2025</div></div>
-            <div><div class="dm-label">Role</div><div class="dm-val">Data Analyst / Product Development Analyst</div></div>
-            <div><div class="dm-label">Client</div><div class="dm-val">Adventure Works Cycles (Fictional)</div></div>
-            <div><div class="dm-label">Domain</div><div class="dm-val">Retail / Bicycle Manufacturing</div></div>
-          </div>
-          <div class="dm-label" style="margin-bottom:10px;">Approach</div>
-          <ul class="detail-list">
-            <li>Designed a Star Schema data warehouse integrating sales, product, and regional datasets</li>
-            <li>Implemented the physical data model and built an ETL pipeline using Azure Data Factory</li>
-            <li>Created a SQL-driven framework for cross-dimensional analysis across regions and product lines</li>
-            <li>Built Power BI dashboards to surface regional demand, profit drivers, and inventory efficiency</li>
-          </ul>
-          <div class="dm-label" style="margin-bottom:10px;">Key Findings</div>
-          <div class="achievement-box">Delivered a strategic roadmap covering <strong>regional demand &amp; expansion</strong>, <strong>profit growth trajectory</strong>, <strong>inventory efficiency gaps</strong>, and <strong>portfolio risk mitigation</strong>, suggesting how to improve the product mix and increase long-term profitability.</div>
+        <div class="stat-box">
+          <div class="stat-n"><span class="counter" data-target="12">0</span><span class="suf">M+</span></div>
+          <div class="stat-l">Daily Active Users Managed</div>
         </div>
-      </div>
-
-      <div class="proj-card" id="p3">
-        <div class="proj-accent-bar"></div>
-        <div class="proj-top">
-          <div class="proj-domain">Retail + E-commerce · Unsupervised ML</div>
-          <div class="proj-title">Customer Behaviour Cluster Analysis</div>
-          <p class="proj-brief">Segmented customers using unsupervised machine learning and clustering techniques to uncover distinct behavioural patterns and support targeted business decision-making.</p>
-          <div class="proj-tools">
-            <span class="tag hi">R</span>
-            <span class="tag hi">Excel</span>
-            <span class="tag">Tableau</span>
-            <span class="tag">Unsupervised ML</span>
-            <span class="tag">K-Means Clustering</span>
-          </div>
-          <div class="proj-links">
-            <a href="https://github.com/Dewan-Nahidul-Alam/cluster-analysis-customer-behaviour" target="_blank" class="proj-link">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-              GitHub
-            </a>
-            <a href="files/report_cluster_analysis.pdf" target="_blank" class="proj-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
-              Report
-            </a>
-          </div>
+        <div class="stat-box">
+          <div class="stat-n"><span class="counter" data-target="90">0</span><span class="suf">%</span></div>
+          <div class="stat-l">Churn Model Accuracy</div>
         </div>
-        <button class="toggle-btn" onclick="toggleProject('p3')">
-          <span class="toggle-icon">+</span>
-          <span class="toggle-text">View Full Case Study</span>
-        </button>
-        <div class="proj-detail" id="p3-detail">
-          <div class="detail-head">Case Study Breakdown</div>
-          <div class="detail-meta">
-            <div><div class="dm-label">Period</div><div class="dm-val">Jan 2025</div></div>
-            <div><div class="dm-label">Role</div><div class="dm-val">Data Analyst / Business Analyst</div></div>
-            <div><div class="dm-label">Client</div><div class="dm-val">Anonymous</div></div>
-            <div><div class="dm-label">Domain</div><div class="dm-val">Retail + E-commerce</div></div>
-          </div>
-          <div class="dm-label" style="margin-bottom:10px;">Approach</div>
-          <ul class="detail-list">
-            <li>Exploratory data analysis to understand customer behaviour patterns and variable distributions</li>
-            <li>Data preprocessing, including scaling and feature selection for clustering readiness</li>
-            <li>Applied clustering algorithms to segment customers into distinct behavioural groups</li>
-            <li>Interpreted cluster profiles to generate actionable business recommendations</li>
-            <li>Identified anomalous behaviours of specific customers sets that might indicate risks or opportunities</li>
-          </ul>
-          <div class="dm-label" style="margin-bottom:10px;">Key Outcome</div>
-          <div class="achievement-box">Defined targeted business strategies from cluster profiles for improved engagement and resource allocation. Recommended actions that might possibly (1) lead to <strong>1.5x increase in order frequency</strong> and <strong>3x increase in average order value</strong> within the least engaged cluster; (2) recover <strong>over 40% of revenue lost</strong> from customers actively returning orders.</div>
+        <div class="stat-box">
+          <div class="stat-n"><span class="counter" data-target="2">0</span></div>
+          <div class="stat-l">Industries — Telecom &amp; E-Commerce</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="wrap">
-    <div class="sh"><div class="sh-eye">Skills & Tools</div><h2>What I work<br>with <em>every day</em></h2></div>
-    <div class="skills-wrap">
-      <div class="skill-group">
-        <div class="sg-label">Tools</div>
-        <div class="sk-item"><span class="sk-name">SQL</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.1s;width:92%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">Microsoft Excel</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.2s;width:95%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">Power BI</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.3s;width:75%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">Tableau</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.35s;width:80%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">R</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.4s;width:80%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">Python</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.45s;width:72%"></div></div></div>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sh">
+        <div class="sh-eye">About</div>
+        <h2>The analyst behind<br>the <em>numbers</em></h2>
       </div>
-      <div class="skill-group">
-        <div class="sg-label">Technical</div>
-        <div class="sk-item"><span class="sk-name">Data Analysis</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.1s;width:95%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">Campaign Analytics</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.15s;width:92%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">Product Management</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.2s;width:88%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">Predictive Modelling</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.25s;width:75%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">Data Warehousing</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.3s;width:72%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">Agile Methodology</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.35s;width:67%"></div></div></div>
-      </div>
-      <div class="skill-group">
-        <div class="sg-label">Domain</div>
-        <div class="sk-item"><span class="sk-name">Telecom</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.1s;width:95%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">E-Commerce</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.15s;width:85%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">CLM / CRM</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.2s;width:90%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">Business Strategy</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.25s;width:85%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">Stakeholder Reporting</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.3s;width:88%"></div></div></div>
-        <div class="sk-item"><span class="sk-name">Critical Thinking</span><div class="sk-bar-wrap"><div class="sk-bar" style="--d:0.35s;width:92%"></div></div></div>
+      <div class="about-grid">
+        <div class="about-body">
+          <p>I'm <strong>Dewan Nahidul Alam</strong>, a data and business analyst currently pursuing a Master of
+            Business Analytics at the University of Auckland. My background spans five years across two fast-moving
+            industries, telecom and e-commerce, where I've worked at the intersection of data, product strategy, and
+            customer behaviour.</p>
+          <p>At <strong>Robi Axiata</strong>, one of Bangladesh's largest telecom operators, I progressed from managing
+            a prepaid product portfolio responsible for BDT 25 million in daily revenue, to building dashboards and
+            analytical models that shaped strategic decisions at the campaign and business level.</p>
+          <p>At <strong>Daraz Bangladesh</strong>, South Asia's leading e-commerce platform, I analyzed traffic and
+            sales data for a platform with 9 million daily active users, ensuring product placement, campaign execution,
+            and content quality drove measurable commercial outcomes.</p>
+          <p>I work with <strong>SQL, Python, R, Power BI, Tableau, and Excel</strong>. My goal is always the same: make
+            data comprehensible and useful for people who need to make decisions.</p>
+        </div>
+        <div>
+          <div class="aside-card">
+            <div class="aside-label">Currently</div>
+            <div class="aside-val">Master of Business Analytics<br>University of Auckland<br>Sep 2025 – Present</div>
+          </div>
+          <div class="aside-card">
+            <div class="aside-label">Location</div>
+            <div class="aside-val">Auckland, New Zealand</div>
+          </div>
+          <div class="aside-card">
+            <div class="aside-label">Languages</div>
+            <div class="aside-val">English — Bilingual<br>Bengali — Bilingual</div>
+          </div>
+          <div class="aside-card">
+            <div class="aside-label">Certifications</div>
+            <div><span class="cert-pill"><span class="cert-dot"></span>SQL · DataCamp</span><span
+                class="cert-pill"><span class="cert-dot"></span>Python · DataCamp</span></div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- EDUCATION -->
-<section id="education">
-  <div class="wrap">
-    <div class="sh"><div class="sh-eye">Education</div><h2>Academic<br><em>background</em></h2></div>
-    <div>
-      <div class="edu-item">
-        <div><div class="edu-year">Sep 2025 – Present</div><div class="edu-inst">University of Auckland</div></div>
-        <div><div class="edu-degree">Master of Business Analytics</div><p class="edu-note">Postgraduate study focused on making analytical business decisions, predictive modeling, business intelligence, and advanced analytics and visualization, applied to real-world business challenges.</p></div>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="sh">
+        <div class="sh-eye">Experience</div>
+        <h2>Where I've worked<br>&amp; what I <em>built</em></h2>
+        <p class="sh-desc">5 years across telecom and e-commerce, growing from roles in campaign operations to analytics
+          and performance.</p>
       </div>
-      <div class="edu-item">
-        <div><div class="edu-year">Dec 2019</div><div class="edu-inst">BRAC University</div></div>
-        <div><div class="edu-degree">BSc. in Computer Science &amp; Engineering</div><p class="edu-note">Undergraduate degree in computer science and engineering, building a strong technical foundation in programming, data structures, algorithms, and systems design.</p></div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-period"><span class="exp-active"></span>Jul 2023 – Sep 2025</div>
+          <div class="exp-co">Robi Axiata Limited</div>
+          <div class="exp-loc">Dhaka, Bangladesh</div>
+        </div>
+        <div>
+          <div class="exp-role">Assistant Manager — Analysis &amp; Performance</div>
+          <p class="exp-desc">Analytics partner to senior leadership — interpreted complex subscriber and revenue data
+            into strategic narratives and actionable recommendations for C-suite and commercial teams, modelled
+            micro-segment customer behaviour, and delivered predictive models and automated reporting to help in regular
+            business status visibility and decision-making at the leadership level.</p>
+          <div class="tag-row"><span class="tag hi">SQL</span><span class="tag hi">Power BI</span><span
+              class="tag hi">Excel</span><span class="tag">Campaign Analytics</span><span class="tag">Data
+              Warehouse</span><span class="tag">Predictive Modelling</span><span class="tag">Telecom</span></div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-period">Feb 2022 – Jul 2023</div>
+          <div class="exp-co">Robi Axiata Limited</div>
+          <div class="exp-loc">Dhaka, Bangladesh</div>
+        </div>
+        <div>
+          <div class="exp-role">Specialist — Product &amp; Pricing</div>
+          <p class="exp-desc">Owned the CLM campaign and prepaid product portfolio responsible for BDT 25M daily revenue
+            and 12M+ users, leading subscriber segmentation and end-to-end product lifecycle management.</p>
+          <div class="tag-row"><span class="tag hi">Product Management</span><span class="tag hi">CLM</span><span
+              class="tag">Pricing Strategy</span><span class="tag">Segmentation</span><span class="tag">Telecom</span>
+          </div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-period">Nov 2020 – Feb 2022</div>
+          <div class="exp-co">Daraz Bangladesh</div>
+          <div class="exp-loc">Dhaka, Bangladesh</div>
+        </div>
+        <div>
+          <div class="exp-role">Campaign Operations Executive</div>
+          <p class="exp-desc">Monitored sales and traffic analytics across a 9M DAU e-commerce platform, maintaining 3%+
+            CTR, and assessing campaign and brand performance while coordinating with CRM, design, and marketing teams
+            to optimize product placement and targeting.</p>
+          <div class="tag-row"><span class="tag hi">Campaign Analytics</span><span class="tag hi">Excel</span><span
+              class="tag">CRM</span><span class="tag">Traffic Analysis</span><span class="tag">E-Commerce</span></div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PUBLICATIONS -->
-<section id="publications">
-  <div class="wrap">
-    <div class="sh"><div class="sh-eye">Publications</div><h2>Research &amp;<br><em>academic work</em></h2></div>
-    <div class="pub-card" id="pub1">
-      <div class="pub-badge">IEEE</div>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sh">
+        <div class="sh-eye">Projects</div>
+        <h2>Case studies &amp;<br><em>analytical work</em></h2>
+        <p class="sh-desc">Projects applying real business thinking to structured datasets. Expand each card for the
+          full case study.<br>To view all projects, go to <a href="projects.html"><strong>All
+              Projects</strong></a>.<br>Or visit <a href="https://github.com/Dewan-Nahidul-Alam" target="_blank">my
+            GitHub</a></p>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card" id="p1">
+          <div class="proj-accent-bar"></div>
+          <div class="proj-top">
+            <div class="proj-domain">Automobile · Predictive Analytics</div>
+            <div class="proj-title">Predictive Customer Churn Analysis</div>
+            <p class="proj-brief">Built a churn prediction model for KoruCharge EV customers, identifying the top 5
+              churn drivers with 90.5% correctness and 89.2% accuracy to support targeted retention strategies.</p>
+            <div class="proj-tools"><span class="tag hi">R</span><span class="tag hi">Excel</span><span
+                class="tag">Logistic Regression</span><span class="tag">XGBoost</span><span
+                class="tag">LightGBM</span><span class="tag">Random Forest</span><span class="tag">KNN</span></div>
+            <div class="proj-links">
+              <a href="https://github.com/Dewan-Nahidul-Alam/korucharge-predictive-churn" target="_blank"
+                class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                </svg>GitHub</a>
+              <a href="files/report_korucharge.pdf" target="_blank" class="proj-link"")"><svg viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                  <polyline points="14,2 14,8 20,8" />
+                </svg>Report</a>
+            </div>
+          </div>
+          <button class="toggle-btn" onclick="toggleProject('p1')"><span class="toggle-icon">+</span><span
+              class="toggle-text">View Full Case Study</span></button>
+          <div class="proj-detail" id="p1-detail">
+            <div class="detail-head">Case Study Breakdown</div>
+            <div class="detail-meta">
+              <div>
+                <div class="dm-label">Period</div>
+                <div class="dm-val">Feb 2026 – Mar 2026</div>
+              </div>
+              <div>
+                <div class="dm-label">Role</div>
+                <div class="dm-val">Business Analyst / Consultant</div>
+              </div>
+              <div>
+                <div class="dm-label">Client</div>
+                <div class="dm-val">KoruCharge (Fictional)</div>
+              </div>
+              <div>
+                <div class="dm-label">Domain</div>
+                <div class="dm-val">Automobile / EV Charging</div>
+              </div>
+            </div>
+            <div class="dm-label" style="margin-bottom:10px;">Approach</div>
+            <ul class="detail-list">
+              <li>Data preprocessing — ensured numerical/variable consistency and handled missing values</li>
+              <li>Exploratory analysis summarising churn distributions across key categorical and numerical variables
+              </li>
+              <li>70/30 train-test split using stratified sampling + 5-fold cross validation on training set</li>
+              <li>Evaluated 6 algorithms: Logistic Regression, LightGBM, XGBoost, Random Forest, Naïve Bayes, KNN</li>
+              <li>Final model fitted to full training data and evaluated on unseen test set</li>
+            </ul>
+            <div class="dm-label" style="margin-bottom:10px;">Key Achievement</div>
+            <div class="achievement-box">Identified the top 5 key drivers of churn with <strong>90.5% correctness and
+                89.2% accuracy</strong>, translating findings into actionable retention recommendations for KoruCharge's
+              management team.</div>
+          </div>
+        </div>
+
+        <div class="proj-card" id="p2">
+          <div class="proj-accent-bar"></div>
+          <div class="proj-top">
+            <div class="proj-domain">Retail · Data Warehouse &amp; BI</div>
+            <div class="proj-title">Data-Driven Product Portfolio Optimisation</div>
+            <p class="proj-brief">Designed a full data warehouse for Adventure Works Cycles using Azure Data Factory and
+              Star Schema, enabling SQL-driven cross-dimensional analysis and a strategic product roadmap.</p>
+            <div class="proj-tools"><span class="tag hi">SQL</span><span class="tag hi">Power BI</span><span
+                class="tag hi2">Azure Data Factory</span><span class="tag">Excel</span><span class="tag">Star
+                Schema</span><span class="tag">ETL</span></div>
+            <div class="proj-links">
+              <a href="https://github.com/Dewan-Nahidul-Alam/adventureworks-product-optimization" target="_blank"
+                class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                </svg>GitHub</a>
+              <a href="files/report_adventureworks.pdf" target="_blank" class="proj-link"><svg viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                  <polyline points="14,2 14,8 20,8" />
+                </svg>Report</a>
+            </div>
+          </div>
+          <button class="toggle-btn" onclick="toggleProject('p2')"><span class="toggle-icon">+</span><span
+              class="toggle-text">View Full Case Study</span></button>
+          <div class="proj-detail" id="p2-detail">
+            <div class="detail-head">Case Study Breakdown</div>
+            <div class="detail-meta">
+              <div>
+                <div class="dm-label">Period</div>
+                <div class="dm-val">Oct 2025 – Nov 2025</div>
+              </div>
+              <div>
+                <div class="dm-label">Role</div>
+                <div class="dm-val">Data Analyst / Product Development Analyst</div>
+              </div>
+              <div>
+                <div class="dm-label">Client</div>
+                <div class="dm-val">Adventure Works Cycles (Fictional)</div>
+              </div>
+              <div>
+                <div class="dm-label">Domain</div>
+                <div class="dm-val">Retail / Bicycle Manufacturing</div>
+              </div>
+            </div>
+            <div class="dm-label" style="margin-bottom:10px;">Approach</div>
+            <ul class="detail-list">
+              <li>Designed a Star Schema data warehouse integrating sales, product, and regional datasets</li>
+              <li>Implemented the physical data model and built an ETL pipeline using Azure Data Factory</li>
+              <li>Created a SQL-driven framework for cross-dimensional analysis across regions and product lines</li>
+              <li>Built Power BI dashboards to surface regional demand, profit drivers, and inventory efficiency</li>
+            </ul>
+            <div class="dm-label" style="margin-bottom:10px;">Key Findings</div>
+            <div class="achievement-box">Delivered a strategic roadmap covering <strong>regional demand &amp;
+                expansion</strong>, <strong>profit growth trajectory</strong>, <strong>inventory efficiency
+                gaps</strong>, and <strong>portfolio risk mitigation</strong>, suggesting how to improve the product mix
+              and increase long-term profitability.</div>
+          </div>
+        </div>
+
+        <div class="proj-card" id="p3">
+          <div class="proj-accent-bar"></div>
+          <div class="proj-top">
+            <div class="proj-domain">Retail + E-commerce · Unsupervised ML</div>
+            <div class="proj-title">Customer Behaviour Cluster Analysis</div>
+            <p class="proj-brief">Segmented customers using unsupervised machine learning and clustering techniques to
+              uncover distinct behavioural patterns and support targeted business decision-making.</p>
+            <div class="proj-tools">
+              <span class="tag hi">R</span>
+              <span class="tag hi">Excel</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">Unsupervised ML</span>
+              <span class="tag">K-Means Clustering</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://github.com/Dewan-Nahidul-Alam/cluster-analysis-customer-behaviour" target="_blank"
+                class="proj-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                </svg>
+                GitHub
+              </a>
+              <a href="files/report_cluster_analysis.pdf" target="_blank" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                  <polyline points="14,2 14,8 20,8" />
+                </svg>
+                Report
+              </a>
+            </div>
+          </div>
+          <button class="toggle-btn" onclick="toggleProject('p3')">
+            <span class="toggle-icon">+</span>
+            <span class="toggle-text">View Full Case Study</span>
+          </button>
+          <div class="proj-detail" id="p3-detail">
+            <div class="detail-head">Case Study Breakdown</div>
+            <div class="detail-meta">
+              <div>
+                <div class="dm-label">Period</div>
+                <div class="dm-val">Jan 2025</div>
+              </div>
+              <div>
+                <div class="dm-label">Role</div>
+                <div class="dm-val">Data Analyst / Business Analyst</div>
+              </div>
+              <div>
+                <div class="dm-label">Client</div>
+                <div class="dm-val">Anonymous</div>
+              </div>
+              <div>
+                <div class="dm-label">Domain</div>
+                <div class="dm-val">Retail + E-commerce</div>
+              </div>
+            </div>
+            <div class="dm-label" style="margin-bottom:10px;">Approach</div>
+            <ul class="detail-list">
+              <li>Exploratory data analysis to understand customer behaviour patterns and variable distributions</li>
+              <li>Data preprocessing, including scaling and feature selection for clustering readiness</li>
+              <li>Applied clustering algorithms to segment customers into distinct behavioural groups</li>
+              <li>Interpreted cluster profiles to generate actionable business recommendations</li>
+              <li>Identified anomalous behaviours of specific customers sets that might indicate risks or opportunities
+              </li>
+            </ul>
+            <div class="dm-label" style="margin-bottom:10px;">Key Outcome</div>
+            <div class="achievement-box">Defined targeted business strategies from cluster profiles for improved
+              engagement and resource allocation. Recommended actions that might possibly (1) lead to <strong>1.5x
+                increase in order frequency</strong> and <strong>3x increase in average order value</strong> within the
+              least engaged cluster; (2) recover <strong>over 40% of revenue lost</strong> from customers actively
+              returning orders.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sh">
+        <div class="sh-eye">Skills & Tools</div>
+        <h2>What I work<br>with <em>every day</em></h2>
+      </div>
+      <div class="skills-wrap">
+        <div class="skill-group">
+          <div class="sg-label">Tools</div>
+          <div class="sk-item"><span class="sk-name">SQL</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.1s;width:92%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">Microsoft Excel</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.2s;width:95%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">Power BI</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.3s;width:75%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">Tableau</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.35s;width:80%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">R</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.4s;width:80%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">Python</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.45s;width:72%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-label">Technical</div>
+          <div class="sk-item"><span class="sk-name">Data Analysis</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.1s;width:95%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">Campaign Analytics</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.15s;width:92%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">Product Management</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.2s;width:88%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">Predictive Modelling</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.25s;width:75%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">Data Warehousing</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.3s;width:72%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">Agile Methodology</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.35s;width:67%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-label">Domain</div>
+          <div class="sk-item"><span class="sk-name">Telecom</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.1s;width:95%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">E-Commerce</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.15s;width:85%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">CLM / CRM</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.2s;width:90%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">Business Strategy</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.25s;width:85%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">Stakeholder Reporting</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.3s;width:88%"></div>
+            </div>
+          </div>
+          <div class="sk-item"><span class="sk-name">Critical Thinking</span>
+            <div class="sk-bar-wrap">
+              <div class="sk-bar" style="--d:0.35s;width:92%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <div class="sh">
+        <div class="sh-eye">Education</div>
+        <h2>Academic<br><em>background</em></h2>
+      </div>
       <div>
-        <div class="pub-journal">IEEE Xplore · Jul 2021</div>
-        <div class="pub-title">Detection of Modulated Motor Cortex using Anodal and Cathodal TDCS based Neurofeedback</div>
-        <div class="pub-meta">Peer-reviewed publication · IEEE · July 2021</div>
-        <a href="https://ieeexplore.ieee.org/abstract/document/9469038" target="_blank" class="pub-link">View on IEEE Xplore ↗</a>
+        <div class="edu-item">
+          <div>
+            <div class="edu-year">Sep 2025 – Present</div>
+            <div class="edu-inst">University of Auckland</div>
+          </div>
+          <div>
+            <div class="edu-degree">Master of Business Analytics</div>
+            <p class="edu-note">Postgraduate study focused on making analytical business decisions, predictive modeling,
+              business intelligence, and advanced analytics and visualization, applied to real-world business
+              challenges.</p>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div>
+            <div class="edu-year">Dec 2019</div>
+            <div class="edu-inst">BRAC University</div>
+          </div>
+          <div>
+            <div class="edu-degree">BSc. in Computer Science &amp; Engineering</div>
+            <p class="edu-note">Undergraduate degree in computer science and engineering, building a strong technical
+              foundation in programming, data structures, algorithms, and systems design.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="wrap">
-    <div class="sh" style="margin-bottom:36px;"><div class="sh-eye">Contact</div></div>
-    <div class="contact-headline">Let's talk data,<br>strategy, or <em>opportunities</em></div>
-    <p class="contact-sub">Open to full-time roles related to data and business analytics in New Zealand and internationally.</p>
-    <div class="contact-links">
-      <a href="mailto:dnaniloy@gmail.com" class="c-link c-dark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        dnaniloy@gmail.com
-      </a>
-      <a href="https://www.linkedin.com/in/dewan-nahidul-alam-niloy" target="_blank" class="c-link c-outline">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://github.com/Dewan-Nahidul-Alam" target="_blank" class="c-link c-outline">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-        GitHub
-      </a>
-      <a href="files/resume_dewan.pdf" target="_blank" class="c-link c-outline">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 16L7 11H10V4H14V11H17L12 16ZM5 20V18H19V20H5Z"/></svg>
-        Resume
-      </a>
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="wrap">
+      <div class="sh">
+        <div class="sh-eye">Publications</div>
+        <h2>Research &amp;<br><em>academic work</em></h2>
+      </div>
+      <div class="pub-card" id="pub1">
+        <div class="pub-badge">IEEE</div>
+        <div>
+          <div class="pub-journal">IEEE Xplore · Jul 2021</div>
+          <div class="pub-title">Detection of Modulated Motor Cortex using Anodal and Cathodal TDCS based Neurofeedback
+          </div>
+          <div class="pub-meta">Peer-reviewed publication · IEEE · July 2021</div>
+          <a href="https://ieeexplore.ieee.org/abstract/document/9469038" target="_blank" class="pub-link">View on IEEE
+            Xplore ↗</a>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="footer-brand">
-    <span class="footer-name">Dewan Nahidul Alam</span>
-  </div>
-  <span class="footer-note">Data &amp; Business Analyst · Auckland, NZ · 2026</span>
-</footer>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sh" style="margin-bottom:36px;">
+        <div class="sh-eye">Contact</div>
+      </div>
+      <div class="contact-headline">Let's talk data,<br>strategy, or <em>opportunities</em></div>
+      <p class="contact-sub">Open to full-time roles related to data and business analytics in New Zealand and
+        internationally.</p>
+      <div class="contact-links">
+        <a href="mailto:dnaniloy@gmail.com" class="c-link c-dark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          dnaniloy@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/dewan-nahidul-alam-niloy" target="_blank" class="c-link c-outline">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/Dewan-Nahidul-Alam" target="_blank" class="c-link c-outline">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+          </svg>
+          GitHub
+        </a>
+        <a href="files/resume_dewan.pdf" target="_blank" class="c-link c-outline">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 16L7 11H10V4H14V11H17L12 16ZM5 20V18H19V20H5Z" />
+          </svg>
+          Resume
+        </a>
+      </div>
+    </div>
+  </section>
 
-<script>
-// Scroll reveal
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.exp-item, .proj-card, .edu-item, .skill-group, .pub-card').forEach(el => revealObs.observe(el));
+  <footer>
+    <div class="footer-brand">
+      <span class="footer-name">Dewan Nahidul Alam</span>
+    </div>
+    <span class="footer-note">Data &amp; Business Analyst · Auckland, NZ · 2026</span>
+  </footer>
 
-// Skill bars
-const skillObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.querySelectorAll('.sk-bar').forEach(b => b.classList.add('vis')); });
-}, { threshold: 0.2 });
-document.querySelectorAll('.skill-group').forEach(g => skillObs.observe(g));
+  <script>
+    // Scroll reveal
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.exp-item, .proj-card, .edu-item, .skill-group, .pub-card').forEach(el => revealObs.observe(el));
 
-// Counter animation
-function animateCounter(el) {
-  const target = parseInt(el.dataset.target);
-  const duration = 1800;
-  const start = performance.now();
-  function update(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const ease = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.floor(ease * target);
-    if(progress < 1) requestAnimationFrame(update);
-    else el.textContent = target;
-  }
-  requestAnimationFrame(update);
-}
-const counterObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting) { e.target.querySelectorAll('.counter').forEach(animateCounter); counterObs.unobserve(e.target); }
-  });
-}, { threshold: 0.3 });
-document.querySelectorAll('.hero-stats').forEach(s => counterObs.observe(s));
+    // Skill bars
+    const skillObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.querySelectorAll('.sk-bar').forEach(b => b.classList.add('vis')); });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.skill-group').forEach(g => skillObs.observe(g));
 
-// Project toggle
-function toggleProject(id) {
-  const card = document.getElementById(id);
-  const detail = document.getElementById(id+'-detail');
-  const btn = card.querySelector('.toggle-text');
-  const isOpen = card.classList.toggle('open');
-  detail.classList.toggle('open', isOpen);
-  btn.textContent = isOpen ? 'Collapse Details' : 'View Full Case Study';
-}
+    // Counter animation
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const duration = 1800;
+      const start = performance.now();
+      function update(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(ease * target);
+        if (progress < 1) requestAnimationFrame(update);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(update);
+    }
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.querySelectorAll('.counter').forEach(animateCounter); counterObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.hero-stats').forEach(s => counterObs.observe(s));
 
-// Nav active
-const sections = document.querySelectorAll('section[id]');
-const navAs = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-  let cur = '';
-  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 80) cur = s.id; });
-  navAs.forEach(a => { a.style.color = a.getAttribute('href')==='#'+cur ? 'var(--accent)' : ''; });
-}, { passive: true });
-</script>
+    // Project toggle
+    function toggleProject(id) {
+      const card = document.getElementById(id);
+      const detail = document.getElementById(id + '-detail');
+      const btn = card.querySelector('.toggle-text');
+      const isOpen = card.classList.toggle('open');
+      detail.classList.toggle('open', isOpen);
+      btn.textContent = isOpen ? 'Collapse Details' : 'View Full Case Study';
+    }
+
+    // Nav active
+    const sections = document.querySelectorAll('section[id]');
+    const navAs = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+      navAs.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--accent)' : ''; });
+    }, { passive: true });
+  </script>
 </body>
+
 </html>
